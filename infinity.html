@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
   <!-- Don't use this in production: -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 
 <body>
@@ -20,8 +21,8 @@
       const [verified, setVerified] = React.useState([]);
       React.useEffect(() => {
         const widgets = [...Array(widgetCount).keys()].map(n =>
-          grecaptcha.render(`widget${n}`, {
-            sitekey: '6Le1Q-4aAAAAAPxiA-8un2vTzU5PoCw9-wWwD7Wr'
+          hcaptcha.render(`widget${n}`, {
+            sitekey: 'affcf511-d5a8-4a02-85c9-9aca9546106a'
           }));
       }, []);
       return (
@@ -53,8 +54,6 @@
         document.getElementById('root')
       );
     };
-  </script>
-  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
   </script>
 
 </body>
